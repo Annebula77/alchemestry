@@ -8,7 +8,7 @@ const checkImg = async (imgUrl) => {
 }
 
 function formatNumber(number) {
-    // Преобразуем входное значение в число и проверяем его корректность
+
     const num = Number(number);
     if (isNaN(num)) {
         return '0.00';
