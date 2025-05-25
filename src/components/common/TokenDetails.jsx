@@ -1,15 +1,8 @@
 import React from 'react';
 import { svg2img } from '../../utils/randomAvatar';
+import { formatNumber } from '../../utils/funcs';
 
 const TokenDetails = ({ token }) => {
-  const formatNumber = (num) => {
-    if (!num) return '0';
-    const n = Number(num);
-    if (n >= 1e9) return (n / 1e9).toFixed(2) + 'B';
-    if (n >= 1e6) return (n / 1e6).toFixed(2) + 'M';
-    if (n >= 1e3) return (n / 1e3).toFixed(2) + 'K';
-    return n.toFixed(2);
-  };
 
   const change24h = ((token.volume24HrsETH * 1) / (token.tradeVolumeETH * 1) * 100).toFixed(2);
 
