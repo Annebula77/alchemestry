@@ -3,9 +3,11 @@
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -216,35 +218,43 @@
 }
 
 .custom-table {
-  border-collapse: collapse; /* Collapse table borders */
-  width: 100%; /* Optionally, set table width */
+  border-collapse: collapse;
+  /* Collapse table borders */
+  width: 100%;
+  /* Optionally, set table width */
 }
 
 .custom-table th,
 .custom-table td {
-  border: none; /* Remove all borders */
+  border: none;
+  /* Remove all borders */
   padding: 8px;
 }
 
 .custom-table tr td:first-child {
-  padding-left: 60px; /* Adjust as needed */
+  padding-left: 60px;
+  /* Adjust as needed */
 }
 
 .custom-table tr th:first-child {
-  padding-left: 80px; /* Adjust as needed */
+  padding-left: 80px;
+  /* Adjust as needed */
 }
 
 .custom-table tr th:last-child {
-  padding-right: 80px; /* Adjust as needed */
+  padding-right: 80px;
+  /* Adjust as needed */
 }
 
 .custom-table th {
-  background-color: #191919; /* Set background color for header cells */
+  background-color: #191919;
+  /* Set background color for header cells */
   color: white;
 }
 
 .custom-table td {
-  background-color: black; /* Set background color for header cells */
+  background-color: black;
+  /* Set background color for header cells */
 }
 
 .menubutton {
@@ -270,4 +280,57 @@
 .font-regular {
   font-family: "altivo";
   font-weight: 400;
+}
+
+.token-details-panel {
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.token-details-panel:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.token-details-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.token-details-row {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.token-details-row:last-child {
+  border-bottom: none;
+}
+
+.token-details-label {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.token-details-value {
+  font-size: 16px;
+  color: white;
+}
+
+.token-details-address {
+  color: #00a3cc;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.token-details-address:hover {
+  color: #00b8e6;
+}
+
+.token-change-positive {
+  color: #449782;
+}
+
+.token-change-negative {
+  color: #ff4d4d;
 }

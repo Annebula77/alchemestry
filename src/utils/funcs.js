@@ -8,14 +8,20 @@ const checkImg = async (imgUrl) => {
 }
 
 function formatNumber(number) {
-    if (Math.abs(number) >= 1.0e+9) {
-        return (number / 1.0e+9).toFixed(2) + "B";
-    } else if (Math.abs(number) >= 1.0e+6) {
-        return (number / 1.0e+6).toFixed(2) + "M";
-    } else if (Math.abs(number) >= 1.0e+3) {
-        return (number / 1.0e+3).toFixed(2) + "K";
+    // Преобразуем входное значение в число и проверяем его корректность
+    const num = Number(number);
+    if (isNaN(num)) {
+        return '0.00';
+    }
+
+    if (Math.abs(num) >= 1.0e+9) {
+        return (num / 1.0e+9).toFixed(2) + "B";
+    } else if (Math.abs(num) >= 1.0e+6) {
+        return (num / 1.0e+6).toFixed(2) + "M";
+    } else if (Math.abs(num) >= 1.0e+3) {
+        return (num / 1.0e+3).toFixed(2) + "K";
     } else {
-        return number.toFixed(2);
+        return num.toFixed(2);
     }
 }
 

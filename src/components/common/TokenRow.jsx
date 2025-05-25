@@ -5,7 +5,7 @@ import { green } from "@mui/material/colors";
 import { removeW } from "../../utils/funcs";
 import "./style.css";
 
-const TokenRow = ({ data }) => {
+const TokenRow = ({ data, onTokenSelect }) => {
   const [imageExists, setImageExists] = useState(false);
 
   // useEffect(() => {
@@ -21,8 +21,27 @@ const TokenRow = ({ data }) => {
   //     });
   // }, [data.symbol]);
 
+  const handleClick = () => {
+    // NOTE: Log token details to console
+    console.log("Token Details:", {
+      symbol: data.symbol,
+      name: data.name,
+      price: data.derivedUSD,
+      marketCap: formatNumber(data.tradeVolumeUSD * 1),
+      liquidity: formatNumber(data.totalLiquidityUSD * 1),
+      volume: formatNumber(data.tradeVolume * 1),
+      change24h: (((data.volume24HrsETH * 1) / (data.tradeVolumeETH * 1)) * 100).toFixed(2) + "%",
+      contractAddress: data.id
+    });
+
+    // NOTE: Call the callback function to display the data on the right
+    if (onTokenSelect) {
+      onTokenSelect(data);
+    }
+  };
+
   return (
-    <tr>
+    <tr onClick={handleClick} style={{ cursor: "pointer" }}>
       <td
         style={{
           display: "flex",
@@ -63,9 +82,9 @@ const TokenRow = ({ data }) => {
           {"+" +
             (data.tradeVolumeETH * 1
               ? (
-                  ((data.volume24HrsETH * 1) / (data.tradeVolumeETH * 1)) *
-                  100
-                ).toFixed(2)
+                ((data.volume24HrsETH * 1) / (data.tradeVolumeETH * 1)) *
+                100
+              ).toFixed(2)
               : "0") +
             "%"}
         </span>
