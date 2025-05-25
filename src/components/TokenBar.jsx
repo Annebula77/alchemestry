@@ -124,6 +124,7 @@ const TokenBar = () => {
           <div
             style={{
               position: "absolute",
+              maxWidth: "70vw",
               top: "calc(26% + 50px)",
               transform: "translateX(-50%)",
               width: isLargeScreen ? "60vw" : "90vw",
@@ -132,8 +133,7 @@ const TokenBar = () => {
               borderRadius: "5px",
               zIndex: "50",
               color: "white",
-              border: `2px solid transparent`, // Set border color to primary color
-              right: "-30vw",
+              border: `2px solid transparent`, // Set border color to primary color          
             }}
           >
             {/* Add your div content here */}
