@@ -283,8 +283,12 @@
 }
 
 .token-details-panel {
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 3;
+  background-color: #191919;
+  padding: 20px;
+  margin-left: 20px;
+  border-radius: 8px;
+  border: 1px solid #00a3cc;
 }
 
 .token-details-panel:hover {
@@ -292,39 +296,62 @@
 }
 
 .token-details-header {
+  margin-bottom: 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 15px;
+}
+
+.token-details-header h3 {
+  color: white;
   margin-bottom: 20px;
 }
 
+.token-details-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.token-details-image {
+  width: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.token-details-image.has-logo {
+  border-radius: 0;
+}
+
+.token-details-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.token-details-symbol {
+  color: #888;
+}
+
 .token-details-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.token-details-row:last-child {
-  border-bottom: none;
-}
-
 .token-details-label {
   color: #888;
-  font-size: 14px;
-  margin-bottom: 5px;
 }
 
 .token-details-value {
-  font-size: 16px;
   color: white;
 }
 
 .token-details-address {
   color: #00a3cc;
   cursor: pointer;
-  transition: color 0.2s ease;
-}
-
-.token-details-address:hover {
-  color: #00b8e6;
 }
 
 .token-change-positive {
@@ -332,5 +359,65 @@
 }
 
 .token-change-negative {
-  color: #ff4d4d;
+  color: #cb4348;
+}
+
+.token-table th {
+  text-align: start;
+  cursor: pointer;
+  padding: 12px 20px;
+}
+
+.token-table th:last-child {
+  cursor: default;
+}
+
+.token-table tbody {
+  background-color: black;
+}
+
+.token-table tr td:first-child {
+  padding-left: 20px;
+}
+
+.tokens-container {
+  display: flex;
+  width: 95%;
+  gap: 20px;
+  max-height: 70vh;
+}
+
+.token-table-container {
+  flex: 7;
+  background-color: #191919;
+  overflow: auto;
+}
+
+.token-table {
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-size: medium;
+}
+
+.token-details-panel {
+  flex: 3;
+  background-color: #191919;
+  padding: 20px;
+  margin-left: 20px;
+  border-radius: 8px;
+  border: 1px solid #00a3cc;
+  height: fit-content;
+  overflow-y: auto;
+}
+
+@media (max-width: 960px) {
+  .tokens-container {
+    flex-direction: column;
+  }
+
+  .token-details-panel {
+    margin-left: 0;
+    margin-top: 20px;
+  }
 }

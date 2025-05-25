@@ -1,8 +1,17 @@
+html,
 body {
   margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  box-sizing: border-box;
   font-family: "altivo";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 code {
